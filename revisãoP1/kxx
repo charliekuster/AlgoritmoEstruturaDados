@@ -1,0 +1,15 @@
+Function Soma_elementos (array, n):
+
+soma = 0
+
+for i=0 to n-1:
+    soma += array[i]
+
+return soma;
+
+Function PrintElemento (array, n, i):
+
+printf("o elemento do array[1] é:"):
+printf(array[1]);
+
+return;

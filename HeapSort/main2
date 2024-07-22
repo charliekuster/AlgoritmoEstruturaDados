@@ -1,0 +1,37 @@
+
+void MaxHeapfy(int *vet, int n, int meio){
+    int esq, dir, index_maior, aux;
+    esq = meio * 2 + 1;
+    dir = meio * 2 + 2;
+    index_maior = meio;
+    if(esq <= n){
+        if(vet[esq] > vet[index_maior]){
+            index_maior = esq;
+        }
+    }
+    if(dir <= n){
+        if(vet[dir] > vet[index_maior]){
+            index_maior = dir;
+        }
+    }
+    if(index_maior == meio){
+        return;
+    }    
+    if(index_maior <= n){
+        aux = vet[index_maior];
+        vet[index_maior] = vet[meio];
+        vet[meio] = aux;
+        MaxHeapfy(vet, n, index_maior);
+    }
+}
+
+void BuildMaxHeap(int *vet, int *vet2, int n){
+    int meio;
+    meio = n/2;
+    while(meio >= 0){
+        printf("meio = %d\n", meio);
+        MaxHeapfy(vet, n, meio);
+        meio--;
+    }
+    return;
+}
